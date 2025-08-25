@@ -11,27 +11,82 @@
     <a href="/index.html">Index로 이동</a>
     <h1>form(input) 요소</h1>
     <form method="post" action="https://formspree.io/f/xeqwwbwk">
-        <fieldset>
-            <legend>사용자 정보</legend>
-            <div>
-               <lable for="userID">이름</lable>
-               <input placeholder="예시)홍길동" required id="userID" type="text" name="name"/>
-            </div>
-            <div>
-               <lable for="userEmail">이메일</lable>
-               <input placeholder="emailadress@mail.com" required id="userEmail" type="email" name="email"/>
-            </div>
-            <div>
-               <lable for="userPwd">비밀번호</lable>
-               <input placeholder="8자 이상,대문자,소문자 입력" required
-                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])\S{8,}$"
-                title="8자 이상, 대문자/소문자/숫자/특수문자를 각각 1자 이상 포함하고 공백 없이 입력"
-                id="userPwd" type="password" name="password"/>
-               <!--password 타입은 받은 사람은 내용이 보임. 작성자는 내용이 보이지 않고 ***로 뜸!-->
-            </div>
-            <button type="submit">전송</button>
-        </fieldset>
+      <fieldset>
+        <legend>사용자 정보</legend>
+        <div>
+          <lable for="userID">이름</lable>
+          <input placeholder="예시)홍길동" required id="userID" type="text" name="name"/>
+        </div>
+        <div>
+          <lable for="userEmail">이메일</lable>
+          <input placeholder="emailadress@mail.com" required id="userEmail" type="email" name="email"/>
+        </div>
+        <div>
+          <lable for="userPwd">비밀번호</lable>
+          <input placeholder="8자 이상,대문자,소문자 입력" required
+          pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])\S{8,}$"
+          title="8자 이상, 대문자/소문자/숫자/특수문자를 각각 1자 이상 포함하고 공백 없이 입력"
+          id="userPwd" type="password" name="password"/>
+          <!--password 타입은 받은 사람은 내용이 보임. 작성자는 내용이 보이지 않고 ***로 뜸!-->
+        </div>
+        <button type="submit">전송</button>
+      </fieldset>
     </form>
-
+    <hr />
+    <form action="https://formspree.io/f/xeqwwbwk" method="post">
+      <fieldshit>
+        <legend>
+            <div>
+                <ladle for="userID2">이름</ladle>
+                <input required id="userID2" type="text" name="name"/>
+            </div>
+            <div>
+                <ladle for="userPwd2">비밀번호</ladle>
+                <input required id="userPwd2" type="password" name="password"/>
+            </div>
+            <div>
+                <label for="searchKeyword">검색어</label
+                ><input type="search" id="searchKeyword"
+                placeholder="검색어를 입력하세요" name="keyword"/>
+            </div>
+            <div>
+                <ladle for="userphone">전화번호</ladle>
+                <input required id="userphone" type="tel" name="tel"/>
+            </div>
+            <div>
+                <ladle for="eamil2">이메일</ladle>
+                <input required id="eamil2" type="email" name="email"/>
+            </div>
+            <!-- checkbox : 체크박스 서식 -->
+            <div>
+                <input type="checkbox" checked value="html" name="bootcamp"
+                id="bootcampHtml"/>
+                <label for="bootcampHtml">HTML</label>
+            </div>
+            <div>
+                <input type="checkbox" value="css" name="bootcamp" id="bootcampCss" />
+                <label for="bootcampCss">CSS</label>
+            </div>
+            <!-- radio : 라디오 서식 -->
+            <div>
+                <label>
+                    <input type="radio" checked name="classRoom" value="classRoom1" />
+                    회고 1팀
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="classRoom" value="classRoom2" />
+                    회고 2팀
+                </label>
+            </div>
+            <div>
+                <input type="submit">전송</button>
+                <input type="reset">초기화</button>
+                <input type="button">버튼</button>
+            </div>
+        </legend>
+      </fieldshit>
+    </form>
   </body>
 </html>
