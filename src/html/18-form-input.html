@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <title>form(input) 요소</title>
+  </head>
+  <body>
+    <a href="/index.html">Index로 이동</a>
+    <h1>form(input) 요소</h1>
+    <form method="post" action="https://formspree.io/f/xeqwwbwk">
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <div>
+               <lable for="userID">이름</lable>
+               <input placeholder="예시)홍길동" required id="userID" type="text" name="name"/>
+            </div>
+            <div>
+               <lable for="userEmail">이메일</lable>
+               <input placeholder="emailadress@mail.com" required id="userEmail" type="email" name="email"/>
+            </div>
+            <div>
+               <lable for="userPwd">비밀번호</lable>
+               <input placeholder="8자 이상,대문자,소문자 입력" required
+                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])\S{8,}$"
+                title="8자 이상, 대문자/소문자/숫자/특수문자를 각각 1자 이상 포함하고 공백 없이 입력"
+                id="userPwd" type="password" name="password"/>
+               <!--password 타입은 받은 사람은 내용이 보임. 작성자는 내용이 보이지 않고 ***로 뜸!-->
+            </div>
+            <button type="submit">전송</button>
+        </fieldset>
+    </form>
+
+  </body>
+</html>
