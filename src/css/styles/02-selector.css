@@ -1,0 +1,14 @@
+/*전체선택자*/
+* {
+  font-size: 24px;
+}
+/*요소선택자*/
+a {
+  text-decoration: none;
+  /* text-decoration-style: wavy; */
+  color: #f00;
+}
+/*클래스선택자*/
+.like {
+  background-color: yellow;
+}
