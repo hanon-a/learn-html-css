@@ -1,0 +1,34 @@
+body {
+  margin: 20px;
+}
+
+/* CSS nesting 속성 */
+.likelion {
+  background-color: #ffc;
+
+  > ul {
+    list-style-image: url('/src/assets/thumbnail/new.png');
+  }
+
+  /* 하위 선택자, 문맥 선택자 */
+  ul {
+    padding-left: 40px;
+  }
+
+  li {
+    margin: 10px 0;
+
+    li:first-child {
+      color: red;
+    }
+  }
+
+  .sub-last {
+    background-color: #cff;
+
+    &:hover {
+      background-color: darkblue;
+      color: white;
+    }
+  }
+}

@@ -16,6 +16,9 @@ body {
 /* list-style-position */
 .bootcamp {
   background-color: #ffc;
+
+  &:hover {
+  }
 }
 
 .bootcamp ul {
