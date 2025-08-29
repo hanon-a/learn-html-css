@@ -1,0 +1,32 @@
+body {
+  margin: 20px;
+}
+
+/* 배경 스타일링 */
+/* body {
+  background-color: #ffc;
+  background-image: url('/src/assets/images/sun.png'), url('/src/assets/images/cloud.png');
+  background-repeat: no-repeat;
+  background-size:
+    100px 100px,
+    200px 150px;
+  background-position: 50% 30%;
+  background-attachment: fixed;
+} */
+
+/* background 속성으로 위의 내용을 축약해서 표현하기 */
+body {
+  background:
+    url('/src/assets/images/sun.png') no-repeat 50% 30% /100px 100px fixed,
+    url('/src/assets/images/cloud.png') no-repeat 50% 30% /200px 150px fixed,
+    #ffc;
+  /* 이렇게도 가능
+  background:
+    url('/src/assets/images/sun.png') no-repeat 50% 30% /100px 100px fixed,
+    #ffc url('/src/assets/images/cloud.png') no-repeat 50% 30% /200px 150px fixed,; */
+
+  /*틀린 에시 (색상이 맨 처음에 나와서 색으로 덮이거나 아예 오류나서 안 읽는 경우)
+   background:
+    #ffc url('/src/assets/images/sun.png') no-repeat 50% 30% /100px 100px fixed,
+    url('/src/assets/images/cloud.png') no-repeat 50% 30% /200px 150px fixed,; */
+}
