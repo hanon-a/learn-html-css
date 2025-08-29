@@ -1,0 +1,66 @@
+body {
+  margin: 20px;
+}
+
+.wrapper {
+  width: 500px;
+  border: 2px solid red;
+}
+
+/* position : relative(offset지정이 가능함. 화면에서 조금 떠있어서 움직임이 가능!)
+(배치, 레이아웃하기위함.) */
+.like {
+  background-color: #ffc;
+  position: relative;
+  left: 50px;
+  bottom: 20px;
+}
+
+/* position : absolut(본인이 있던 자리가 사라짐.
+ 나머지 애들은 static_선형화 상태.위에 없어지니까 윗칸으로 올라온것.) */
+.bootcamp {
+  background-color: #fcf;
+  position: absolute;
+  left: 50px;
+  top: 200px;
+}
+
+/* position : fixed */
+.school {
+  background-color: #cff;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+/* position : sticky */
+h1 {
+  background-color: #cfc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* z-index 속성 (원래 속성이 auto_자동/1_숫자가 나중인 것이 위로 올라옴/2...) */
+
+.frontend {
+  background-color: yellow;
+}
+
+.euid {
+  background-color: orange;
+}
+
+.container {
+  background-color: #000;
+  margin-top: 50px;
+
+  p {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid currentColor;
+    position: relative;
+    top: -5px;
+    left: -5px;
+  }
+}
