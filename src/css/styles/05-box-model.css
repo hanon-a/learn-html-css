@@ -1,0 +1,115 @@
+body {
+  margin: 20px;
+}
+
+/* 인라인 상자 */
+strong {
+  background-color: #ffc;
+  width: 100px;
+  display: inline-block;
+}
+
+
+h1 {
+    background-color: #fcf;
+}
+
+.bootcamp{
+    border: red 2px solid;
+    width: 500px;
+}
+
+p {
+    background-color: #cff;
+    margin-block: 10px;
+    display-block;
+}
+
+/* 안쪽 여백 */
+.like {
+    padding: 10px;
+}
+.lion {
+    padding: 10px 20px;
+}
+.love {
+    padding-left: 20%;
+    /* padding: 10px 20px 30px 40px; */
+}
+/* padding-top,bottom,left,right */
+
+.front {
+    padding-left: 3em;
+}
+
+.end {
+    padding-left: 20%;
+    padding-top: 20%;
+}
+
+/* 배경 바깥쪽 여백 - margin */
+/* 바깥쪽 여백 - margin */
+.euid {
+    border: 2px solid green;
+    width: 800px;
+    maaegin: 0 auto;
+}
+h1 {
+  margin: 20px -20px;
+}
+
+p{
+  margin: 20px 0;
+}
+
+.like {
+    margin-bottom: 30px;
+}
+
+.bootcamp {
+    margin: 0 0 0 auto;
+}
+
+
+
+
+/* 음수마진 */
+.container {
+    border: 2px solid blueviolet;
+    margin: 20px auto;
+    width: 800px;
+    div -> display 모드 바꾸기 display: flow-root;
+    display: flex;
+}
+.container div{
+    width: 80px;
+    height: 80px;
+    border: 1px solid red;
+    border-radius: 50%;
+    align-content: center;
+    padding-left: 1em;
+    /* 가로로 나열하기*/ float: left;
+    
+}
+/*(n + 2) : n(1)번빼고 두번째부터.*/
+.container div:nth-child(n + 2){
+    margin-left: -20px;
+}
+/*UI 및 선택자 복습*/
+.container div:first-child {
+    background-color: var(--yellow);
+}
+.container div:nth-child(2) {
+    background-color: var(--pink);
+}
+.container div:nth-child(3) {
+    background-color: var(--aqua);
+}
+.container div:last-child {
+    background-color: var(--mint);
+}
+
+/*hover*/
+.container div:hover {
+    z-index: 100;
+}}
