@@ -52,6 +52,8 @@ body {
     padding: 10px;
     /* border-top:2px solid red; */
     border-block-start: 2px solid red;
+    /* padding-block-start: 20px; */
+     /* 이렇게  한쪽만 쓰면 나머지는 기본값 0으로 적용 */
     /* border-bottom: 2px dashed blue; */
     border-block-end: 2px dashed blue;
 }
