@@ -1,0 +1,36 @@
+body {
+    margin: 20px;
+}
+
+/* 내가 짠 코드 */
+/* .utility-bar {
+    background-color: #fcc;
+    li {
+    display: inline-block;
+    margin: 6px;
+}
+span {
+    margin-right: 6px;
+}
+} */
+
+.utility-bar {
+    /* background: yellow; */
+    text-transform: uppercase;
+    display: flow-root;
+    font-size: 0; /*공백문자이슈 해결*/
+    /* text-align: right; */
+
+    li{
+        /* background:#fcc; */
+        display: inline-block;
+        font-size: 0;
+        text-align: left;
+    }
+    
+    a, /*span*/[aria-hidden="true"] {
+        display: inherit;
+        padding-inline: 8px;
+        font-size: 1rem /*다시 16px로 바꿈.*/
+    }
+}
