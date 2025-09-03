@@ -1,3 +1,136 @@
 body {
     margin: 20px;
 }
+
+/* 플렉스 켄테이너 관련 속성 */
+.like {
+    background: #ffc;
+    box-shadow: 0 0 0 1px red;
+    inline-size: 1000px;
+    block-size: 100px;
+
+    /* 플렉스 컨테이너로 설정 */
+    display: flex;
+    /* flex-direction: column; */
+    /* flex-direction: row; <-이게 기본 설정! */
+    /* flex-wrap: nowrap; */
+    flex-flow: row nowrap;/*바로 위에 두개 합친것과 같음*/
+    /* flex-direction, flex-wrap 속성을 한 번에 선언 */
+    justify-content: end;/* 메인 축 정렬 */
+    align-items: center;/* 교차 축 정렬 */
+    
+    /* .like {
+    background: #ffc;
+    display: flow-root;
+    > div {
+        float: left;
+    } */
+
+    > div {
+        inline-size: 200px;
+        background: aqua;
+    }
+}
+
+.lion {
+  background: #ffc;
+  box-shadow: 0 0 0 1px red;
+  inline-size: 500px;
+  block-size: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+  align-items: end;
+  /* align-items: center; */
+  align-content: end;
+
+  > div {
+    inline-size: 200px;
+    background: aqua;
+  }
+}
+
+/* .bootcamp {
+    background: pink;
+    inline-size: 500px;
+    white-space: nowrap;
+    box-shadow: 0 0 0 2px blue;
+
+    > div {
+        inline-size: 200px;
+        background: salmon;
+        display: inline-block;
+    }
+} */
+
+.bootcamp {
+    background: pink;
+    box-shadow: 0 0 0 1px blue;
+    inline-size: 400px;
+
+    display: flex;
+    flex-flow: row nowrap; /*가로배치*/
+    /*flex-flow: column nowrap;*/ /*세로배치*/
+
+    > div {
+        inline-size: 125px;
+    }
+
+    .bootcamp-item1 {
+        background: skyblue;
+        flex-shrink: 1;
+    }
+    
+    .bootcamp-item2 {
+        background: silver;
+        flex-shrink: 2;
+    }
+    
+    .bootcamp-item3 {
+        background: lime;
+        /* 순서 정하기 */
+        order: 1;
+        flex-shrink: 1;
+    }
+    
+    .bootcamp-item4 {
+        background: salmon;
+        /* 순서 정하기 */
+        order: -1;
+        flex-shrink: 1;
+    }
+}
+
+.frontend {
+  background: pink;
+  box-shadow: 0 0 0 1px blue;
+  inline-size: 1000px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  > div {
+    /* inline-size: 125px; */
+    flex-basis: auto;
+    /* flex-basis: 0; */ /* 이렇게 auto상태 아니고 값을 줬을때, 아래 아이템들이 늘어날 때 같은 너비로 늘어난다! */
+  }
+
+  .frontend-item1 {
+    background: skyblue;
+    flex-grow: 1;
+  }
+
+  .frontend-item2 {
+    background: silver;
+    flex-grow: 0;
+  }
+
+  .frontend-item3 {
+    background: lime;
+    flex-grow: 0;
+  }
+
+  .frontend-item4 {
+    background: salmon;
+    flex-grow: 1;
+  }
+}
