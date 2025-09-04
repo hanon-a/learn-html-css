@@ -2,64 +2,6 @@ body {
     margin: 20px;
 }
 
-.notification {
-  --black: #121212;
-  --green: #22be61;
-  --gray: #9b9a90;
-  --white: #fff;
-
-  /* 강사님께서 짜신 코드 */
-  /* background: #ffc; */
-  border: 1px solid var(--gray);
-  border-radius: 0.25rem;
-  padding: 1.25rem;
-
-  display: flex;
-  flex-flow: row nowrap;
-
-  column-gap: 1.25rem;
-  align-items: center;
-
-  
-  
-  .notification-icon {
-      /* box-shadow: 0 0 0 1px red; */
-      flex: 0 0 auto;
-    }
-    
-    .notification-content {
-        /* box-shadow: 0 0 0 1px blue; */
-        flex: 1 1 0;
-        display: flex;
-        flex-flow: row wrap; /*자리가 모자르면 자식요소가 아랫줄로 내려가도록*/
-        justify-content: space-between;
-        row-gap: 4px;
-
-    strong {
-        /* background: orange; */
-        color: var(--green);
-        font-size: 1.125rem;
-        font-weight: 700;
-    }
-    
-    time {
-        /* background: #22be61; */
-        color: var(--green);
-        font-size: 0.6875rem;
-        /* margin-inline-start: auto; */
-
-    }
-
-    p {
-        /* background: aqua; */
-        inline-size: 100%;
-        color: var(--gray);
-        font-size: .875rem;
-    }
-   }
-}
-
-
 /* 내가 짜본 코드 */
 /* .ui-component {
     background: yellow;
@@ -77,3 +19,141 @@ body {
         margin-right: 20px;
     }
 } */
+
+.notification {
+  --black: #121212;
+  --green: #22be61;
+  --gray: #9b9a90;
+  --white: #fff;
+
+  --point-color: var(--green);
+  --text-color: var(--gray);
+  --bg-color: var(--white);
+
+  /* 강사님께서 짜신 코드 */
+  /* background: #ffc; */
+  border: 1px solid CurrentColor;
+  color: var(--text-color);
+  /* border: 1px solid var(--gray); */
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  column-gap: 1.25rem;
+  align-items: center;
+
+  
+  
+  .notification-icon {
+      /* box-shadow: 0 0 0 1px red; */
+      flex: 0 0 auto;
+
+      rect {
+      fill: var(--point-color);
+      }
+    }
+    
+    .notification-content {
+        /* box-shadow: 0 0 0 1px blue; */
+        flex: 1 1 0;
+        display: flex;
+        flex-flow: row wrap; /*자리가 모자르면 자식요소가 아랫줄로 내려가도록*/
+        justify-content: space-between;
+        row-gap: 4px;
+
+    strong,
+    time {
+        color: var(--point-color)
+    }
+
+    strong {
+        /* background: orange; */
+        /* color: var(--green); */
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+    
+    time {
+        /* background: #22be61; */
+        /* color: var(--green); */
+        font-size: 0.6875rem;
+        /* margin-inline-start: auto; */
+
+    }
+
+    p {
+        /* background: aqua; */
+        inline-size: 100%;
+        /* color: var(--gray); */
+        font-size: .875rem;
+    }
+   }
+}
+
+.notification-wrapper {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 30px;
+}
+
+@media (min-width: 601px) {
+    .notification-wrapper {
+        --gap: 30px;
+
+        flex-flow: row wrap;
+        column-gap: var(--gap);
+
+        .notification {
+            /* flex-grow: 1 1 0; */
+            inline-size: calc(50% - (var(--gap) / 2));
+        }
+    }
+}
+
+@media (min-width: 1001px) {
+    .notification-wrapper {
+        /* --gap: 30px;
+
+        flex-flow: row nowrap;
+        column-gap: var(--gap); */
+        flex-wrap: nowrap;
+
+        .notification {
+            /* flex: 1 1 0; */
+            inline-size: calc(50% - (var(--gap) / 2));
+        }
+    }
+}
+
+/* 레이아웃 */
+.notification-wrapper {
+  --gap: 30px;
+
+  /* border: 1px solid red; */
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: var(--gap);
+
+  @media (width > 600px) {
+    column-gap: var(--gap);
+  }
+
+  li {
+    display: contents;
+  }
+
+  .notification {
+    inline-size: 100%;
+
+    @media (width > 600px) {
+      inline-size: calc((100% - var(--gap) * 1) / 2);
+    }
+
+    @media (width > 1000px) {
+      inline-size: calc((100% - var(--gap) * 3) / 4);
+    }
+  }
+}
