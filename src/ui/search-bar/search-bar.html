@@ -15,6 +15,25 @@
   <body>
     <a href="/index.html">Index로 이동</a>
     <h1>네이버 검색 폼</h1>
+    <h2>검색 바</h2>
+    <div class="search-bar">
+      <a a href="https://www.naver.com/" class="go home" target="_blank" rel="noreferrer">
+        <!-- rel="noopener noreferrer" -->
+        <em class="text-logo">
+          <span aria-hidden="true" class="text">n</span>
+          <span class="sr-only">네이버</span>
+        </em>
+      </a>
+      <form action="/">
+        <div class="input">
+          <label for="inputSearch">검색어</label>
+          <input type="text" name="keyword" id="inputSearch" required placeholder="검색어를 입력해주세요" />
+        </div>
+        <button type="button" aria-label="검색버튼" class="circle-gradient"></button>
+      </form>
+    </div>
+    <hr />
+
     <h2>로고</h2>
     <h3>svg 요소</h3>
     <div class="ui-component">
@@ -40,7 +59,17 @@
       </em>
       <button type="button" class="copy-component">복사</button>
     </div>
+    <hr />
+
     <h2>입력서식</h2>
+    <div class="ui-component">
+      <div class="input">
+        <label for="inputID">레이블</label>
+        <input type="text" name="" id="inputID" required placeholder="힌트를 입력해주세요" />
+      </div>
+      <button type="button" class="copy-component">복사</button>
+    </div>
+    <hr />
 
     <h2>버튼</h2>
     <div class="ui-component">
