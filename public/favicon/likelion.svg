@@ -2,9 +2,11 @@
   <style>
     g{
       fill: #000;
+    }
 
-      @media (prefers-color-scheme: dark) {
-        fill: #fff;
+    @media (prefers-color-scheme: dark) {
+      g{
+      fill: #fff;
       }
     }
   </style>

@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light dark;
+}
+
+/* 함수 */
+body {
+  margin: 20px;
+  color: light-dark(var(--black), var(--white));
+  background: light-dark(var(--gray), var(--black));
+}
+
+/* prefers Color scheme -미디어 쿼리 활용 */
+/* body {
+  margin: 20px;
+  background: var(--gray);
+  color: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      margin: 20px;
+      background: var(--black);
+      color: var(--gray);
+    }
+  }
+} */
