@@ -1,0 +1,68 @@
+body {
+    margin: 20px
+}
+
+h1 {
+    background: rgba(0, 255, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+/* Stacking Context */
+.likelion {
+  background: #ffc;
+  border: 1px solid currentColor;
+  block-size: 200px;
+  position: relative;
+  z-index: 3;
+
+  .bootcamp,
+  .forntend,
+  .euid {
+    border: inherit;
+    inline-size: 50px;
+    aspect-ratio: 1/1;
+  }
+
+  .bootcamp {
+    background: rgba(255, 0, 0, 1);
+    position: absolute;
+    inset-block-start: -20px;
+    inset-inline-start: 10px;
+    z-index: 1;
+  }
+  
+  .forntend {
+    background: pink;
+    z-index: 4;
+  }
+  
+  .euid {
+    background: skyblue;
+    z-index: 4;
+  }
+}
+
+.cafe-w {
+  border: 10px solid currentColor;
+  inline-size: 500px;
+  block-size: 200px;
+  position: relative;
+  background: pink;
+  isolation: isolate;
+
+  .hero {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    z-index: -1;
+  }
+  .star {
+    background: #fff;
+    border-radius: 50%;
+  }
+  .text {
+    background: yellow;
+    padding: 1em;
+  }
+}
