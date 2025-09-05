@@ -282,3 +282,56 @@ border: var(--disabled-color);
     margin-inline-start: 24px;
   }
 }
+
+/* 입력서식 */
+/* .combo-box {
+  background: var(--white);
+  border: 1px solid var(--gray-700);
+  border-radius: 0.3rem;
+  padding: 10px;
+  display: inline-block;
+
+  select {
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    margin-right: 10px;
+  }
+} */
+
+/* 강사님의 코드 */
+.combo-box {
+  --text-color: var(--gray-500);
+
+  /* background: yellow; */
+  display: inline-flex;
+  flex-flow: row-nowrap;
+  align-items: center;
+  position: relative;
+  color: var(--text-color);
+
+  svg {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  > svg:nth-of-type(1) {
+    /* border: 1px solid blue; */
+    inset-inline-start: 6px;
+  }
+  > svg:nth-of-type(2) {
+    /* border: 1px solid green; */
+    inset-inline-end: 6px;
+  }
+
+  select {
+    inline-size: 100%;
+    padding: 0.2em 1.8em 0.25em 1.6em;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    color: inherit;
+    appearance: none;
+  }
+}
