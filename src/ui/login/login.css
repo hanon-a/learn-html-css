@@ -1,0 +1,15 @@
+body {
+  margin: 20px;
+}
+
+/* 로고 컴포넌트 */
+.logo {
+  /* background-color: red; */
+  display: inline-flex;
+  /* width: 51.25%; 아래 inline-size 이전 고정값.*/
+  inline-size: min(51.25%, 230px);
+
+  @media (width >= 768px) {
+    inline-size: 230px;
+  }
+}
