@@ -1,10 +1,11 @@
 // DOM 선택부
-const uiComponent = document.querySelector('.ui-component');
-const copyButton = uiComponent?.querySelector('.copy-component');
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('.copy-component');
+  if (!button) return;
+  const container = button.closest('.ui-component');
+  if (!container) return;
 
-// 함수 구현부
-function copyMarkupExceptButton(container, button) {
-  if (!container || !button) return;
+  // 함수 구현부
   // 버튼을 제외한 HTML 추출
   const clone = container.cloneNode(true);
   const btn = clone.querySelector('.copy-component');
@@ -17,9 +18,4 @@ function copyMarkupExceptButton(container, button) {
       button.textContent = '복사';
     }, 1200);
   });
-}
-
-// 이벤트 바인딩 영역
-copyButton?.addEventListener('click', () => {
-  copyMarkupExceptButton(uiComponent, copyButton);
 });

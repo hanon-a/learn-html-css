@@ -1,15 +1,324 @@
-body {
-  margin: 20px;
+:root {
+  --white: #fff;
+  --green-100: #03cc5c;
+  --green-200: #1bf008;
+  --green-300: #03cca8;
+
+  --blue-100: #e9f0fd;
+  --red-100: #ff1414;
+
+  --gray-100: #bcc3c7;
+  --gray-200: #9b9a90;
+  --gray-300: #6d7478;
+
+  --primary-color: var(--green-100);
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+  --active-color: var(--blue-100);
+}
+
+body > a:first-child {
+  position: fixed;
+  inset-inline-start: 20px;
+  inset-block-start: 20px;
 }
 
 /* 로고 컴포넌트 */
+/* width: 51.25%; 아래 inline-size 이전 고정값.*/
 .logo {
-  /* background-color: red; */
   display: inline-flex;
-  /* width: 51.25%; 아래 inline-size 이전 고정값.*/
-  inline-size: min(51.25%, 230px);
+  inline-size: clamp(164px, 51.25%, 230px);
+  color: var(--primary-color);
 
   @media (width >= 768px) {
     inline-size: 230px;
+  }
+}
+
+/* 버튼 컴포넌트 : 버튼은 원래 인라인 블록. 인라인 플랙스와 동일
+그럼 장점은? :  */
+/* .button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: 0 none;
+  padding: 1rem;
+  display: inline-flex;
+} */
+
+/* 버튼 컴포넌트 */
+.button {
+  border: 0 none;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  /* align-items: center; */
+  padding: 1rem;
+
+  &.button-fill {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+
+  &.disabled {
+    background: var(--gray-200);
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    background: var(--green-300);
+  }
+}
+
+/* 체크박스 컴포넌트 */
+/* .checkbox {
+  --size: 1.5rem;
+
+  &.bg-icon {
+    position: relative;
+
+    input {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      margin: 0;
+      inline-size: var(--size);
+      block-size: var(--size);
+      appearance: none;
+    }
+
+    label {
+      block-size: var(--size);
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      background: url(/src/assets/naver/unchecked.svg) no-repeat 0 0;
+      padding-inline-start: calc(var(--size) + 4px);
+    }
+
+    input:checked + label {
+      background-image: url(/src/assets/naver/checked.svg);
+    }
+  }
+} */
+/* 체크박스 컴포넌트 복습할 때 확인할 코드 : contain*/
+/* .checkbox {
+
+  &.bg-icon {
+    label {
+      background: yellow url(/src/assets/naver/checked.svg) no-repeat 0 0 / contain;
+    }
+  }
+} */
+
+/* 체크박스 - svg 이미지 사용한 경우 */
+/* 체크박스 - 배경 이미지 & SVG 이미지 */
+/* 체크박스 - 배경 이미지 & SVG 이미지 */
+.checkbox {
+  --size: 24px;
+  --gap: 4px;
+
+  position: relative;
+  display: inline-flex;
+
+  input {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    inline-size: var(--size);
+    block-size: var(--size);
+    appearance: none;
+  }
+
+  label {
+    block-size: var(--size);
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &.bg-icon {
+    label {
+      background: url(/src/assets/naver/unchecked.svg) no-repeat;
+      padding-inline-start: calc(var(--size) + var(--gap));
+    }
+
+    input:checked + label {
+      background-image: url(/src/assets/naver/checked.svg);
+    }
+  }
+
+  &.svg-icon {
+    label {
+      column-gap: var(--gap);
+    }
+
+    input:checked + label {
+      .area,
+      .border {
+        fill: var(--green-100);
+      }
+
+      .marker {
+        fill: var(--white);
+      }
+    }
+  }
+}
+
+/* 링크 텍스트 */
+.textlink-new {
+  font-weight: 700;
+}
+
+/* 스위치 */
+.switch {
+  /* background: pink; */
+  position: relative;
+  display: inline-flex;
+
+  input {
+    position: absolute;
+    margin: 0;
+    inset: 0;
+    appearance: none;
+    /* inset-inline-start: 0;
+    inset-block-start: 0;
+    inline-size: 100%;
+    block-size: 100%; */
+  }
+
+  label::after {
+    content: 'OFF';
+    color: var(--gray-200);
+  }
+
+  input:checked + label::after {
+    content: 'ON';
+    color: var(--green-200);
+  }
+}
+
+/* 입력서식 */
+.input {
+  --size: 72px;
+
+  /* background: yellow; */
+  block-size: var(--size);
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+
+  input {
+    inline-size: 100%;
+    block-size: 48px;
+    border: 1px solid var(--gray-200);
+    padding-inline-start: 0.5em;
+
+    &:read-only {
+      background: var(--gray-100);
+    }
+  }
+
+  .error-message {
+    color: var(--red-100);
+    font-size: 0.625rem;
+    /* display: none; */
+    /* background: pink; */
+    visibility: hidden;
+  }
+
+  input:user-invalid + .error-message {
+    visibility: visible;
+  }
+}
+
+/* 레이아웃 */
+/* 모바일 퍼스트 */
+.header {
+  margin-block: 70px 45px;
+  text-align: center;
+
+  .logo {
+    vertical-align: top;
+  }
+
+  @media (width >=768px) {
+    margin-block: 100px 50px;
+  }
+}
+
+.main {
+  padding: 0 15px;
+
+  form {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 10px;
+
+    @media (width >= 768px) {
+      inline-size: 460px;
+      margin-inline: auto;
+    }
+
+    .input,
+    .checkbox-wrapper,
+    .button {
+      inline-size: 100%;
+    }
+    .checkbox-wrapper {
+      order: 1;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: end;
+
+      @media (width < 768px) {
+        .textlink-new,
+        .switch {
+          display: none;
+        }
+      }
+      @media (width >= 768px) {
+        justify-content: start;
+
+        .checkbox {
+          margin-inline-end: auto;
+        }
+
+        .switch {
+          inline-size: 2em;
+          display: flex;
+          justify-content: end;
+          margin-inline-start: 0.5em;
+        }
+      }
+    }
+    .button {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      block-size: 50px;
+    }
+
+    /* 상태 디자인 */
+    :focus {
+      outline: 0 none;
+    }
+
+    .input input:focus-visible {
+      border: 1px solid var(--green-100);
+      background: var(--blue-100);
+    }
+
+    .button:focus-visible {
+      box-shadow: 0 0 1px 2px #f00;
+    }
+
+    .checkbox-wrapper *:focus-visible {
+      outline: 2px solid var(--green-100);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
   }
 }
