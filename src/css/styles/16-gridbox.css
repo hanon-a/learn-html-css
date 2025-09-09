@@ -1,0 +1,167 @@
+body {
+  margin: 20px;
+}
+
+/* 그리드 셀 배경 색상 */
+.like,
+.lion,
+.euid,
+.forntend {
+  > div:nth-child(1) {
+    background: var(--pink);
+  }
+  > div:nth-child(2) {
+    background: var(--blue);
+  }
+  > div:nth-child(3) {
+    background: var(--coral);
+  }
+  > div:nth-child(4) {
+    background: var(--green);
+  }
+  > div:nth-child(5) {
+    background: var(--purple);
+  }
+  > div:nth-child(6) {
+    background: var(--gray);
+  }
+  > div:nth-child(7) {
+    background: var(--apricot);
+  }
+}
+
+.like {
+  background: yellow;
+  inline-size: 500px;
+  block-size: 200px;
+  display: grid;
+
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.lion {
+  border: 1px solid red;
+  background: aqua;
+  inline-size: 500px;
+  block-size: 300px;
+  display: grid;
+  grid-template-columns: 50px 100px 50px 100px;
+  grid-template-rows: repeat(4, 50px);
+  /* justify-content: center;
+  align-content: center; */
+  place-content: center;
+  /* justify-items: center;
+  align-items: center; */
+  place-items: center;
+
+  > div:nth-child(odd) {
+    order: 1;
+  }
+
+  .lion1 {
+    /* justify-self: end;
+    align-self: end; */
+    place-self: center;
+  }
+}
+
+/* 그리드 라인기반 레이아웃*/
+.euid {
+  background: orange;
+  inline-size: 500px;
+  block-size: 200px;
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  .euid1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .euid2 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+  .euid3 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+  .euid4 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .euid5 {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .euid6 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+  .euid7 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+/* 그리드 이름기반 레이아웃 */
+.forntend {
+  background: silver;
+  inline-size: 80%;
+  block-size: 200px;
+  /* min-inline-size: 400px; */
+  display: grid;
+
+  grid-template-columns: minmax(50px, 1fr) minmax(10rem, 1fr) minmax(15%, 1fr) minmax(100px, 1fr);
+  grid-template-rows: repeat(4, minmax(100px, 1fr));
+
+  grid-template-areas:
+    'box1 box1 box1 box3'
+    'box1 box1 box1 box6'
+    'box4 box5 box5 box6'
+    'box7 box5 box5 box2';
+
+  .forntend1 {
+    grid-area: box1;
+  }
+
+  .forntend2 {
+    grid-area: box2;
+  }
+
+  .forntend3 {
+    grid-area: box3;
+  }
+
+  .forntend4 {
+    grid-area: box4;
+  }
+
+  .forntend5 {
+    grid-area: box5;
+  }
+
+  .forntend6 {
+    grid-area: box6;
+  }
+
+  .forntend7 {
+    grid-area: box7;
+  }
+}
