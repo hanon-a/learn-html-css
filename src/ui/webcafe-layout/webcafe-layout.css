@@ -1,0 +1,93 @@
+/* 색지정 */
+.container {
+  background: silver;
+  min-block-size: 100vh;
+
+  .header {
+    background: yellow;
+  }
+
+  .main {
+    background: gray;
+  }
+
+  .book {
+    background: pink;
+  }
+  .news {
+    background: lightgreen;
+  }
+  .board {
+    background: salmon;
+  }
+  .favorite {
+    background: teal;
+  }
+  .twitter {
+    background: aqua;
+  }
+  .footer {
+    background: yellow;
+  }
+}
+
+/* flex 레이아웃 */
+/* 컨테이너 */
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/* 헤더 & 푸터 */
+.header,
+.footer {
+  block-size: 100px;
+  flex: 0 1 auto;
+}
+
+/* 헤더 */
+.header {
+}
+
+/* 헤더 & 메인콘텐츠 & 푸터 */
+.header,
+.main,
+.footer {
+  max-inline-size: 1200px;
+  inline-size: 100%;
+}
+
+/* 메인 콘텐츠 */
+.main {
+  flex: 1 1 0;
+  display: flex;
+  flex-flow: row wrap;
+
+  > div {
+    inline-size: 100%;
+  }
+
+  @media (width >= 960px) {
+    .book {
+      inline-size: 35%;
+    }
+    .news {
+      inline-size: 65%;
+    }
+    .board {
+      inline-size: 35%;
+    }
+    .favorite {
+      inline-size: 20%;
+      order: 1;
+    }
+    .twitter {
+      inline-size: 45%;
+    }
+  }
+}
+
+/* 푸터 */
+.footer {
+}
