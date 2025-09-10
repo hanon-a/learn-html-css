@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: [full-start] 20px [content-start] 1fr [content-end] 20px [full-end];
   grid-template-rows: 100px repeat(5, 1fr) 100px;
+  justify-content: center;
 
   .header,
   .book,
@@ -71,7 +72,7 @@
   }
 
   @media (width>=960px) {
-    grid-template-columns: [full-start] 1fr [content-start] repeat(12, minmax(62px, 1fr)) [content-end] 1fr [full-end];
+    grid-template-columns: [full-start] 4px [content-start] repeat(12, minmax(62px, 82px)) [content-end] 4px [full-end];
     grid-auto-rows: auto;
     gap: 16px;
 
