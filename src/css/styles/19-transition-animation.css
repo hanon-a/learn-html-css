@@ -1,0 +1,112 @@
+body {
+  margin: 20px;
+}
+
+/* 그리드 레이아웃 */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-template-rows: repeat(3, 200px); */
+  grid-auto-rows: 200px;
+  grid-auto-flow: row;
+  gap: 16px;
+}
+
+/* js를 활용한 색 바꾸기 */
+.euid {
+  padding: 16px;
+  border: 1px solid currentColor;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  grid-column: 1 / -1;
+  align-items: start;
+
+  span {
+    background: lightgreen;
+    padding: 10px;
+    transition-property: background;
+    transition-duration: 2000ms;
+
+    &:hover {
+      background: pink;
+    }
+  }
+}
+
+/* 공통 속성 */
+.contaner {
+  padding: 16px;
+  border: 1px solid currentColor;
+
+  > div {
+    inline-size: 80px;
+    block-size: 80px;
+    background: yellow;
+    text-align: center;
+    align-content: center;
+  }
+}
+
+/* rotate - 회전하기 */
+.bootcamp {
+  .rotate {
+    transition-property: rotate, translate, background;
+    transition-duration: 1000ms, 2s, 500ms;
+    transition-timing-function: linear, ease-in-out, ease;
+    transition-delay: 0ms, 1000ms, 1500ms;
+    /* transition:
+      translate 1000ms ease-in-out 0s,
+      rotate 500ms liner 1000ms,
+      background 500ms ease 1500ms; */
+    /* 왜 안됨/?? */
+    border-radius: 50%;
+
+    &.active {
+      /* transform: rotate(45deg) translateX(100px); */
+      /* rotate: 45deg; */
+      rotate: 1.5turn;
+      translate: 100px 0;
+      background: pink;
+    }
+  }
+}
+
+/* scale - 크기변경 */
+.frontend {
+  .scale {
+    transition: scale 1000ms;
+    transform-origin: 0 0;
+
+    &.active {
+      /* transform: scale(2, 1); */
+      scale: 2 1;
+    }
+  }
+}
+
+/* translate - 움직이기 */
+.like {
+  .translate {
+    transition-property: translate;
+    transition-duration: 1000ms;
+
+    &.active {
+      /* transform: translate(100px, 0); */
+      translate: 100px 0;
+    }
+  }
+}
+
+/* skew - 기울이기 */
+.lion {
+  .skew {
+    transition-property: transform;
+    transition-duration: 1000ms;
+
+    &.active {
+      transform: skew(-15deg, 5deg) translateX(100px);
+      /* translate: 100px 0; */
+    }
+  }
+}
