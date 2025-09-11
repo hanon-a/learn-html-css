@@ -1,0 +1,74 @@
+body {
+  margin: 20px;
+}
+
+.cell {
+  container-type: inline-size;
+}
+
+.card {
+  border: 1px solid currentColor;
+  padding: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+
+  figure {
+    inline-size: 100%;
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 2/1;
+      object-fit: cover;
+      object-position: 50% 20%;
+    }
+  }
+
+  @container (width >=600px) {
+    flex-flow: row wrap;
+
+    h2 {
+      inline-size: 100%;
+    }
+
+    figure {
+      flex: 2 1 0;
+    }
+
+    p {
+      flex: 1 1 0;
+    }
+  }
+}
+
+/* bootcamp */
+.bootcamp {
+  box-shadow: 0 0 0 5px red;
+  display: flex;
+  flex-flow: column nowrap;
+  /* gap: 16px; */
+
+  @media (width >600px) {
+    flex-flow: row wrap;
+
+    .cell {
+      /* flex: 1 1 0; */
+      inline-size: 50%;
+      container-type: inline-size;
+    }
+  }
+}
+
+/* likelion */
+.likelion {
+  box-shadow: 0 0 0 5px green;
+  display: flow-root;
+  container-type: inline-size;
+
+  .card {
+    float: inline-start;
+    background: yellow;
+    inline-size: 70%;
+    margin-inline-end: 26px;
+  }
+}
