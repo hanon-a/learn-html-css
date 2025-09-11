@@ -51,15 +51,15 @@ body {
 /* rotate - 회전하기 */
 .bootcamp {
   .rotate {
-    transition-property: rotate, translate, background;
+    /* transition-property: rotate, translate, background;
     transition-duration: 1000ms, 2s, 500ms;
     transition-timing-function: linear, ease-in-out, ease;
-    transition-delay: 0ms, 1000ms, 1500ms;
-    /* transition:
+    transition-delay: 0ms, 1000ms, 1500ms; */
+    transition:
       translate 1000ms ease-in-out 0s,
-      rotate 500ms liner 1000ms,
-      background 500ms ease 1500ms; */
-    /* 왜 안됨/?? */
+      rotate 500ms linear 1000ms,
+      background 500ms ease 1500ms;
+    /* 왜 안됨/?? linear 오타났어서 적용 안된거였음 오타 주의,, */
     border-radius: 50%;
 
     &.active {
