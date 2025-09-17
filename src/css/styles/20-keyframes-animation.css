@@ -155,7 +155,6 @@ body {
     background: conic-gradient(red 0% 25%, green 25% 50%, blue 50% 75%, purple 75% 100%);
     border-radius: 50%;
     animation: spin 800ms infinite linear;
-    animation: pulse 800ms;
     animation-play-state: paused;
   }
 }
